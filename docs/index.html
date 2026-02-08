@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kornerFlag.com | VAR Analysis</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Particle Canvas Background -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="logo.png" alt="kornerFlag" class="nav-logo">
+            <span class="nav-brand-text">kornerFlag</span>
+        </div>
+        <div class="nav-links">
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#demo" class="nav-link">Demo</a>
+            <a href="#pricing" class="nav-link">Pricing</a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg class="theme-icon sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="5"/>
+                    <line x1="12" y1="1" x2="12" y2="3"/>
+                    <line x1="12" y1="21" x2="12" y2="23"/>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+                    <line x1="1" y1="12" x2="3" y2="12"/>
+                    <line x1="21" y1="12" x2="23" y2="12"/>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+                </svg>
+                <svg class="theme-icon moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+                </svg>
+            </button>
+            <a href="#contact" class="nav-cta">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="dot"></span>
+                    <span>AI-Powered Analysis</span>
+                </div>
+                <p class="section-label">Video Analysis Platform</p>
+                <h1 class="hero-title">Precision <span class="highlight">VAR analysis</span><br>for modern football</h1>
+                <p class="hero-subtitle">AI-powered video analysis that delivers accurate offside detection, foul identification, and real-time decision support.</p>
+                <div class="hero-buttons">
+                    <a href="#demo" class="btn btn-primary">Start Analysis</a>
+                    <a href="#visualization" class="btn btn-secondary">View Demo</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value">95%+</div>
+                    <div class="stat-label">Accuracy</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">60 FPS</div>
+                    <div class="stat-label">Processing</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">AI Modules</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">&lt;30ms</div>
+                    <div class="stat-label">Latency</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <p class="section-label">Features</p>
+            <h2 class="section-title">Everything you need for VAR</h2>
+            <p class="section-subtitle">Our platform combines multiple AI modules to deliver comprehensive match analysis with professional-grade accuracy.</p>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">01</div>
+                    <h3>Object Detection</h3>
+                    <p>YOLOv8-powered detection identifies players and ball with high accuracy.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">02</div>
+                    <h3>Player Tracking</h3>
+                    <p>Consistent player identification through occlusions and rapid movement.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">03</div>
+                    <h3>Team Classification</h3>
+                    <p>Automatic team assignment using jersey color analysis.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">04</div>
+                    <h3>Field Mapping</h3>
+                    <p>Precise coordinate mapping from camera to pitch positions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">05</div>
+                    <h3>Offside Detection</h3>
+                    <p>Millimeter-precise offside calculations at moment of pass.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">06</div>
+                    <h3>VAR Decisions</h3>
+                    <p>Structured decision output with confidence levels.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="demo">
+        <div class="container">
+            <p class="section-label">Product</p>
+            <h2 class="section-title">Try the analysis</h2>
+            <p class="section-subtitle">Upload match footage to see the system in action.</p>
+
+            <div class="demo-grid">
+                <div class="demo-main">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">Video Input</span>
+                            <span class="card-badge">Ready</span>
+                        </div>
+                        <div class="upload-area" id="uploadArea">
+                            <div class="upload-content">
+                                <svg class="upload-icon-svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="17 8 12 3 7 8"/>
+                                    <line x1="12" y1="3" x2="12" y2="15"/>
+                                </svg>
+                                <p>Drag and drop video file here</p>
+                                <p class="upload-hint">or click to browse (MP4, AVI, MOV)</p>
+                                <input type="file" id="videoInput" accept="video/*" hidden>
+                            </div>
+                        </div>
+                        <div id="videoPreview" class="video-preview" style="display: none;">
+                            <video id="previewVideo" controls></video>
+                            <div class="video-metrics">
+                                <div class="metric">
+                                    <span class="metric-label">Resolution</span>
+                                    <span class="metric-value" id="metricResolution">-</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Duration</span>
+                                    <span class="metric-value" id="metricDuration">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="incidentsCard" class="card" style="display: none; margin-top: 1.5rem;">
+                        <div class="card-header">
+                            <span class="card-title">Detected Incidents</span>
+                            <span class="card-badge" id="incidentCount">0 found</span>
+                        </div>
+                        <div id="incidentsList"></div>
+                    </div>
+                </div>
+
+                <div class="demo-sidebar">
+                    <div class="card">
+                        <div class="card-header">
+                            <span class="card-title">Modules</span>
+                        </div>
+                        <div class="modules-list">
+                            <div class="module-row">
+                                <span>Object Detection</span>
+                                <span class="module-status active">Active</span>
+                            </div>
+                            <div class="module-row">
+                                <span>Multi-Object Tracking</span>
+                                <span class="module-status active">Active</span>
+                            </div>
+                            <div class="module-row">
+                                <span>Team Classification</span>
+                                <span class="module-status active">Active</span>
+                            </div>
+                            <div class="module-row">
+                                <span>Field Homography</span>
+                                <span class="module-status active">Active</span>
+                            </div>
+                            <div class="module-row">
+                                <span>Offside Detection</span>
+                                <span class="module-status active">Active</span>
+                            </div>
+                            <div class="module-row">
+                                <span>Foul Detection</span>
+                                <span class="module-status active">Active</span>
+                            </div>
+                            <div class="module-row">
+                                <span>Penalty Analysis</span>
+                                <span class="module-status active">Active</span>
+                            </div>
+                            <div class="module-row">
+                                <span>VAR Declaration</span>
+                                <span class="module-status active">Active</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button id="runAnalysis" class="btn btn-primary btn-full" style="margin-top: 1.5rem; display: none;">
+                        Run Analysis
+                    </button>
+
+                    <div id="progressContainer" style="display: none; margin-top: 1.5rem;">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <p class="progress-text" id="progressText">Initializing...</p>
+                    </div>
+
+                    <div id="resultsCard" class="card" style="display: none; margin-top: 1.5rem;">
+                        <div class="card-header">
+                            <span class="card-title">Results</span>
+                        </div>
+                        <div class="results-metrics">
+                            <div class="result-metric">
+                                <span class="result-value" id="resultFrames">0</span>
+                                <span class="result-label">Frames</span>
+                            </div>
+                            <div class="result-metric">
+                                <span class="result-value" id="resultIncidents">0</span>
+                                <span class="result-label">Incidents</span>
+                            </div>
+                        </div>
+                        <button id="exportBtn" class="btn btn-secondary btn-full" style="margin-top: 1rem;">
+                            Export Report
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visualization Section -->
+    <section id="visualization" class="visualization">
+        <div class="container">
+            <p class="section-label">Live Visualization</p>
+            <h2 class="section-title">Real-time pass tracking</h2>
+            <p class="section-subtitle">Watch how our AI tracks player movements, passes, and detects offside positions in real-time.</p>
+
+            <div class="field-container">
+                <svg viewBox="0 0 800 500" class="soccer-field">
+                    <!-- Field Background -->
+                    <defs>
+                        <linearGradient id="fieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#0D4F4A;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#115E59;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="passGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#14B8A6;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#06B6D4;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:1" />
+                        </linearGradient>
+                        <filter id="glow">
+                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feMerge>
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                    </defs>
+
+                    <!-- Field -->
+                    <rect x="20" y="20" width="760" height="460" rx="8" fill="url(#fieldGradient)" stroke="#14B8A6" stroke-width="2"/>
+
+                    <!-- Field Lines -->
+                    <line x1="400" y1="20" x2="400" y2="480" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+                    <circle cx="400" cy="250" r="60" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+                    <circle cx="400" cy="250" r="4" fill="rgba(255,255,255,0.8)"/>
+
+                    <!-- Left Penalty Area -->
+                    <rect x="20" y="130" width="100" height="240" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+                    <rect x="20" y="180" width="40" height="140" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+                    <circle cx="90" cy="250" r="4" fill="rgba(255,255,255,0.8)"/>
+
+                    <!-- Right Penalty Area -->
+                    <rect x="680" y="130" width="100" height="240" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+                    <rect x="740" y="180" width="40" height="140" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+                    <circle cx="710" cy="250" r="4" fill="rgba(255,255,255,0.8)"/>
+
+                    <!-- Animated Players - Team A (Cyan/Blue) -->
+                    <g filter="url(#glow)">
+                        <circle cx="100" cy="250" r="12" fill="#06B6D4">
+                            <animate attributeName="cx" values="100;110;100" dur="3s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="200" cy="150" r="12" fill="#06B6D4">
+                            <animate attributeName="cy" values="150;160;150" dur="2.5s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="200" cy="350" r="12" fill="#06B6D4">
+                            <animate attributeName="cy" values="350;340;350" dur="2.8s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="300" cy="200" r="12" fill="#06B6D4">
+                            <animate attributeName="cx" values="300;320;300" dur="3.2s" repeatCount="indefinite"/>
+                            <animate attributeName="cy" values="200;210;200" dur="2.7s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="300" cy="300" r="12" fill="#06B6D4">
+                            <animate attributeName="cx" values="300;310;300" dur="2.9s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="380" cy="250" r="12" fill="#06B6D4">
+                            <animate attributeName="cx" values="380;400;380" dur="3.5s" repeatCount="indefinite"/>
+                        </circle>
+                    </g>
+
+                    <!-- Animated Players - Team B (Teal) -->
+                    <g filter="url(#glow)">
+                        <circle cx="700" cy="250" r="12" fill="#14B8A6">
+                            <animate attributeName="cx" values="700;690;700" dur="3s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="600" cy="150" r="12" fill="#14B8A6">
+                            <animate attributeName="cy" values="150;140;150" dur="2.6s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="600" cy="350" r="12" fill="#14B8A6">
+                            <animate attributeName="cy" values="350;360;350" dur="2.4s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="500" cy="200" r="12" fill="#14B8A6">
+                            <animate attributeName="cx" values="500;480;500" dur="3.1s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="500" cy="300" r="12" fill="#14B8A6">
+                            <animate attributeName="cx" values="500;490;500" dur="2.8s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="420" cy="250" r="12" fill="#14B8A6">
+                            <animate attributeName="cx" values="420;400;420" dur="3.3s" repeatCount="indefinite"/>
+                        </circle>
+                    </g>
+
+                    <!-- Animated Pass Lines -->
+                    <g stroke="url(#passGradient)" stroke-width="2" fill="none" opacity="0.7">
+                        <path d="M 200 150 Q 250 180 300 200" stroke-dasharray="5,5">
+                            <animate attributeName="stroke-dashoffset" from="10" to="0" dur="1s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M 300 200 Q 340 230 380 250" stroke-dasharray="5,5">
+                            <animate attributeName="stroke-dashoffset" from="10" to="0" dur="1.2s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M 200 350 Q 250 320 300 300" stroke-dasharray="5,5">
+                            <animate attributeName="stroke-dashoffset" from="10" to="0" dur="1.1s" repeatCount="indefinite"/>
+                        </path>
+                    </g>
+
+                    <!-- Ball -->
+                    <circle cx="380" cy="250" r="6" fill="white" stroke="#333" stroke-width="1">
+                        <animate attributeName="cx" values="380;300;200;300;380" dur="4s" repeatCount="indefinite"/>
+                        <animate attributeName="cy" values="250;200;150;200;250" dur="4s" repeatCount="indefinite"/>
+                    </circle>
+
+                    <!-- Offside Line -->
+                    <line x1="450" y1="20" x2="450" y2="480" stroke="#ef4444" stroke-width="2" stroke-dasharray="10,5" opacity="0.8">
+                        <animate attributeName="x1" values="450;460;450" dur="3s" repeatCount="indefinite"/>
+                        <animate attributeName="x2" values="450;460;450" dur="3s" repeatCount="indefinite"/>
+                    </line>
+                </svg>
+                <p class="field-caption">Live pass tracking and offside detection visualization</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Designed For Section -->
+    <section class="designed-for">
+        <div class="container">
+            <p class="section-label">Compatibility</p>
+            <h2 class="section-title">Designed for leagues worldwide</h2>
+            <p class="section-subtitle">Our VAR analysis system is built to work with football leagues and competitions across the globe.</p>
+            <div class="leagues-grid">
+                <div class="league-item">Premier League</div>
+                <div class="league-item">La Liga</div>
+                <div class="league-item">Serie A</div>
+                <div class="league-item">Bundesliga</div>
+                <div class="league-item">Ligue 1</div>
+                <div class="league-item">MLS</div>
+                <div class="league-item">Eredivisie</div>
+                <div class="league-item">Liga Portugal</div>
+                <div class="league-item">Turkish Super Lig</div>
+                <div class="league-item">Scottish Premiership</div>
+                <div class="league-item">Belgian Pro League</div>
+                <div class="league-item">Saudi Pro League</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases">
+        <div class="container">
+            <p class="section-label">Use Cases</p>
+            <h2 class="section-title">Built for every level of the game</h2>
+            <p class="section-subtitle">From professional leagues to training academies, kornerFlag adapts to your needs.</p>
+
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        </svg>
+                    </div>
+                    <h3>Professional Leagues</h3>
+                    <p>High-stakes match analysis with millimeter precision for top-tier competitions requiring the highest accuracy standards.</p>
+                    <ul class="use-case-features">
+                        <li>Real-time offside detection</li>
+                        <li>Multi-camera support</li>
+                        <li>Instant replay integration</li>
+                    </ul>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3>Training Academies</h3>
+                    <p>Develop young talent with detailed performance analysis and objective feedback on positioning and movement.</p>
+                    <ul class="use-case-features">
+                        <li>Player movement tracking</li>
+                        <li>Tactical analysis reports</li>
+                        <li>Progress monitoring</li>
+                    </ul>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3>Broadcast Media</h3>
+                    <p>Enhance viewer experience with instant analysis graphics and clear visual explanations of match decisions.</p>
+                    <ul class="use-case-features">
+                        <li>Broadcast-ready graphics</li>
+                        <li>API integration</li>
+                        <li>Custom overlays</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <p class="section-label">Pricing</p>
+            <h2 class="section-title">Flexible plans for every organization</h2>
+            <p class="section-subtitle">Contact our sales team to find the right solution for your needs.</p>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3 class="pricing-name">Starter</h3>
+                    <div class="pricing-price">
+                        <span class="price-value-text">Contact Sales</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Limited matches per month</li>
+                        <li>Basic VAR analysis</li>
+                        <li>Offside detection</li>
+                        <li>Email support</li>
+                        <li>Standard data retention</li>
+                    </ul>
+                    <button class="btn btn-secondary btn-full">Contact Sales</button>
+                </div>
+                <div class="pricing-card highlighted">
+                    <span class="pricing-badge">RECOMMENDED</span>
+                    <h3 class="pricing-name">Professional</h3>
+                    <div class="pricing-price">
+                        <span class="price-value-text">Contact Sales</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Unlimited matches</li>
+                        <li>Full VAR suite</li>
+                        <li>Real-time analysis</li>
+                        <li>Priority support</li>
+                        <li>API access</li>
+                        <li>Extended data retention</li>
+                    </ul>
+                    <button class="btn btn-primary btn-full">Contact Sales</button>
+                </div>
+                <div class="pricing-card">
+                    <h3 class="pricing-name">Enterprise</h3>
+                    <div class="pricing-price">
+                        <span class="price-value-text">Contact Sales</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Everything in Professional</li>
+                        <li>Custom integrations</li>
+                        <li>Dedicated support</li>
+                        <li>On-premise option</li>
+                        <li>SLA guarantee</li>
+                        <li>Unlimited retention</li>
+                    </ul>
+                    <button class="btn btn-secondary btn-full">Contact Sales</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section id="contact" class="contact-cta">
+        <div class="container">
+            <div class="cta-box">
+                <h2>Ready to transform your VAR analysis?</h2>
+                <p>Join hundreds of football organizations using kornerFlag for precise, AI-powered match analysis.</p>
+                <div class="cta-buttons">
+                    <button class="btn btn-primary">Contact Sales</button>
+                    <button class="btn btn-white">Schedule Demo</button>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <p class="contact-label">Email</p>
+                        <p class="contact-value">contact@kornerflag.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <p class="contact-label">Phone</p>
+                        <p class="contact-value">+1 (555) 123-4567</p>
+                    </div>
+                    <div class="contact-item">
+                        <p class="contact-label">Location</p>
+                        <p class="contact-value">San Francisco, CA</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h4>kornerFlag</h4>
+                    <p>AI-powered VAR analysis for modern football. Precision decisions in real-time.</p>
+                </div>
+                <div class="footer-links">
+                    <h5>Product</h5>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#">API</a></li>
+                        <li><a href="#">Integrations</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>Company</h5>
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 kornerFlag. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#">Twitter</a>
+                    <a href="#">LinkedIn</a>
+                    <a href="#">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
